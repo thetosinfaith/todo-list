@@ -214,6 +214,13 @@ body {
   color: #aaa; 
 }
 
+.icons{
+ 
+    margin-right: 50px; 
+    gap: 10px;
+
+}
+
 .other-tasks{
   position: relative;
   width: 100%;
@@ -234,6 +241,34 @@ body {
     
 }
 
+.task-item {
+  position: relative;
+  list-style: none;
+  margin-bottom: 0px; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-right: 70px;
+}
+
+.edit-icon, .trash-icon {
+  margin-left: 35px; 
+}
+
+.edit-icon {
+  color: #B197FC;
+}
+
+.trash-icon {
+  color: #da1616;
+}
+
+.task-content {
+  flex-grow: 1;
+}
+
+
 @keyframes bounce {
   0% { transform: translateY(0); }
   100% { transform: translateY(-5px); }
@@ -241,7 +276,7 @@ body {
 
 .tasks-list {
   position: absolute;
-  margin-left: 30px;
+  margin-left: 20px;
   margin-top: 40px;
   gap: 10px;
   top: 0; 

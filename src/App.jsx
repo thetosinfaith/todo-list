@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import userPlaceholder from "./assets/image-placeholder.jpg";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCalendarDays, faCircle, faClock, faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faCalendarDays, faCircle, faCheck, faTrashCan, faEdit } from '@fortawesome/free-solid-svg-icons';
 
 const App = () => {
   const [userProfilePicture, setUserProfilePicture] = useState(null);
@@ -129,43 +129,48 @@ const App = () => {
       <div className="write-tasks">
         <ul className="list">
           <li className="icons">
-            <FontAwesomeIcon
-              icon={faCircle}
-              size="sm"
-              style={{
-                color: selectedStatus === 'todo' ? "#FFD43B" : "#FFD43B55",
-                animation: "bounce 1s infinite alternate",
-                marginRight: "25px",
-                cursor: "pointer"
-              }}
-              onClick={() => setSelectedStatus('todo')}
-            />
-            <FontAwesomeIcon
-              icon={faCircle}
-              size="sm"
-              style={{
-                color: selectedStatus === 'inprogress' ? "#63E6BE" : "#63E6BE55",
-                animation: "bounce 1s infinite alternate",
-                marginRight: "25px",
-                cursor: "pointer"
-              }}
-              onClick={() => setSelectedStatus('inprogress')}
-            />
-            <FontAwesomeIcon
-              icon={faCircle}
-              size="sm"
-              style={{
-                color: selectedStatus === 'completed' ? "#74C0FC" : "#74C0FC55",
-                animation: "bounce 1s infinite alternate",
-                marginRight: "25px",
-                cursor: "pointer"
-              }}
-              onClick={() => setSelectedStatus('completed')}
-            />
+          
+<FontAwesomeIcon
+  icon={faCircle}
+  size="sm"
+  style={{
+    color: selectedStatus === 'todo' ? "#FFD43B" : "#FFD43B55",
+    animation: "bounce 1s infinite alternate",
+    marginRight: "25px",
+    cursor: "pointer"
+  }}
+  onClick={() => {
+    if (selectedStatus !== 'todo') setSelectedStatus('todo');
+  }}
+/>
+<FontAwesomeIcon
+  icon={faCircle}
+  size="sm"
+  style={{
+    color: selectedStatus === 'inprogress' ? "#63E6BE" : "#63E6BE55",
+    animation: "bounce 1s infinite alternate",
+    marginRight: "25px",
+    cursor: "pointer"
+  }}
+  onClick={() => {
+    if (selectedStatus !== 'inprogress') setSelectedStatus('inprogress');
+  }}
+/>
+<FontAwesomeIcon
+  icon={faCircle}
+  size="sm"
+  style={{
+    color: selectedStatus === 'completed' ? "#74C0FC" : "#74C0FC55",
+    animation: "bounce 1s infinite alternate",
+    marginRight: "25px",
+    cursor: "pointer"
+  }}
+  onClick={() => {
+    if (selectedStatus !== 'completed') setSelectedStatus('completed');
+  }}
+/>
             <input type="text" id="taskInput" placeholder=" What's your next task?" />
-            <input type="time" id="timeInput" style={{ display: "none" }} onChange={handleTimeChange} />
-            <FontAwesomeIcon icon={faClock} size="sm" style={{ color: "#B197FC", marginLeft: "25px", cursor: "pointer" }} onClick={handleTimeIconClick} />
-            <FontAwesomeIcon icon={faCheck} size="sm" style={{ color: "#B197FC", marginLeft: "25px", cursor: "pointer" }} onClick={addTask} />   
+            <FontAwesomeIcon icon={faCheck} size="sm" style={{ color: "#B197FC", marginLeft: "20px", cursor: "pointer" }} onClick={addTask} />   
           </li>
         </ul>
 
@@ -173,20 +178,26 @@ const App = () => {
         <br />
 
         <div className="other-tasks">
-          <ul className="tasks-list">
-            {filteredTasks.map(task => (
-              <li key={task.id} className="icons">
-                <FontAwesomeIcon
-                  icon={faCircle}
-                  size="sm"
-                  style={{ color: getStatusColor(task.status), marginRight: "25px", cursor: "pointer" }}
-                  onClick={() => handleStatusChange(task.id)}
-                />
-                {task.text} {task.time && `at ${task.time}`}
-              </li>
-            ))}
-          </ul>
+  <ul className="tasks-list">
+    {filteredTasks.map(task => (
+      <li key={task.id} className="task-item">
+        <div className="task-content">
+          <FontAwesomeIcon
+            icon={faCircle}
+            size="sm"
+            style={{ color: getStatusColor(task.status), marginRight: "10px", cursor: "pointer" }}
+            onClick={() => handleStatusChange(task.id)}
+          />
+          {task.text} {task.time && `at ${task.time}`}
         </div>
+        <div className="icon-container">
+          <FontAwesomeIcon icon={faEdit} className="edit-icon" />
+          <FontAwesomeIcon icon={faTrashCan} className="trash-icon" />
+        </div>
+      </li>
+    ))}
+  </ul>
+</div>
       </div>
     </div>
   );
