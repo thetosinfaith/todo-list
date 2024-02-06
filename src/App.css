@@ -121,11 +121,6 @@ body {
     font-style: normal;
     
   }
-  
-  .dotIcon {
-    margin-right: 50px; 
-    gap: 10px;
-  }
 
  
 .right {
@@ -141,19 +136,6 @@ body {
   padding: 20px;
  
 }
-
-.title {
-  font-family: "Mukta", sans-serif; 
-  font-size: 18px; 
-  margin-top: 10px; 
-}
-
-.texts {
-  font-family: "Mukta", sans-serif; 
-  font-size: 30px; 
-  margin-top: 5px; 
-}
-
 
 .write-tasks{
   width: 70%;
@@ -173,12 +155,12 @@ body {
 
 .tasks{
   width: 70%;
-  height: 80px; 
+  height: 1000px; 
   border-radius: 12px;
   background-color: #FFFFFF;
   color: black;
   margin: auto;
-  margin-top: 30px;
+  margin-top: 25px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start; 

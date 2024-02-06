@@ -2,13 +2,15 @@ import React, { useState } from "react";
 import "./App.css";
 import userPlaceholder from "./assets/image-placeholder.jpg";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCalendarDays, faCircle, faCheck, faTrashCan, faEdit } from '@fortawesome/free-solid-svg-icons';
+import { faCalendarDays, faCircle, faCheck, faTrashCan, faEdit, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 
 const App = () => {
   const [userProfilePicture, setUserProfilePicture] = useState(null);
   const [selectedTaskTime, setSelectedTaskTime] = useState("");
   const [selectedStatus, setSelectedStatus] = useState("todo");
   const [tasks, setTasks] = useState([]);
+  const [editingTaskId, setEditingTaskId] = useState(null);
+  const [editedTaskText, setEditedTaskText] = useState("");
 
   const [filter, setFilter] = useState('all');
 
@@ -62,15 +64,6 @@ const App = () => {
     }
   };
 
-  const handleTimeIconClick = () => {
-    const timeInput = document.getElementById("timeInput");
-    timeInput.click();
-  };
-
-  const handleTimeChange = (event) => {
-    setSelectedTaskTime(event.target.value);
-  };
-
   const addTask = () => {
     const taskInput = document.getElementById("taskInput");
     const taskText = taskInput.value.trim();
@@ -81,6 +74,36 @@ const App = () => {
       taskInput.value = "";
       setSelectedTaskTime("");
     }
+  };
+
+  const handleEditTask = (id, text) => {
+    setEditingTaskId(id);
+    setEditedTaskText(text);
+  };
+  
+  const handleSaveEdit = () => {
+    setTasks(tasks.map(task => {
+      if (task.id === editingTaskId) {
+      
+        return { ...task, text: editedTaskText };
+      }
+      return task;
+    }));
+   
+    setEditingTaskId(null);
+    setEditedTaskText("");
+  };
+  
+  const handleCancelEdit = () => {
+    setEditingTaskId(null);
+    setEditedTaskText("");
+  };  
+  
+  const handleDeleteTask = (id) => {
+  
+    const updatedTasks = tasks.filter(task => task.id !== id);
+   
+    setTasks(updatedTasks);
   };
 
   return (
@@ -170,34 +193,53 @@ const App = () => {
   }}
 />
             <input type="text" id="taskInput" placeholder=" What's your next task?" />
+          
+
             <FontAwesomeIcon icon={faCheck} size="sm" style={{ color: "#B197FC", marginLeft: "20px", cursor: "pointer" }} onClick={addTask} />   
-          </li>
+            </li>
         </ul>
 
         <br />
         <br />
-
+    
         <div className="other-tasks">
-  <ul className="tasks-list">
-    {filteredTasks.map(task => (
-      <li key={task.id} className="task-item">
-        <div className="task-content">
-          <FontAwesomeIcon
-            icon={faCircle}
-            size="sm"
-            style={{ color: getStatusColor(task.status), marginRight: "10px", cursor: "pointer" }}
-            onClick={() => handleStatusChange(task.id)}
-          />
-          {task.text} {task.time && `at ${task.time}`}
+          <ul className="tasks-list">
+            {filteredTasks.map(task => (
+              <li key={task.id} className="task-item">
+                <div className="task-content">
+                  <FontAwesomeIcon
+                    icon={faCircle}
+                    size="sm"
+                    style={{ color: getStatusColor(task.status), marginRight: "10px", cursor: "pointer" }}
+                    onClick={() => handleStatusChange(task.id)}
+                  />
+                  {editingTaskId === task.id ? (
+                    <input 
+                      type="text" 
+                      value={editedTaskText} 
+                      onChange={(e) => setEditedTaskText(e.target.value)} 
+                      onBlur={handleSaveEdit} 
+                      autoFocus 
+                    />
+                  ) : (
+                    <span>{task.text}</span>
+                  )}
+                </div>
+                <div className="icon-container">
+                  {editingTaskId === task.id ? (
+                    <>
+                      <FontAwesomeIcon icon={faCheck} className="edit-icon" onClick={handleSaveEdit} />
+                      <FontAwesomeIcon icon={faTimesCircle} className="cancel-icon" onClick={handleCancelEdit} />
+                    </>
+                  ) : (
+                    <FontAwesomeIcon icon={faEdit} className="edit-icon" onClick={() => handleEditTask(task.id, task.text)} />
+                  )}
+                  <FontAwesomeIcon icon={faTrashCan} className="trash-icon" onClick={() => handleDeleteTask(task.id)} />
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
-        <div className="icon-container">
-          <FontAwesomeIcon icon={faEdit} className="edit-icon" />
-          <FontAwesomeIcon icon={faTrashCan} className="trash-icon" />
-        </div>
-      </li>
-    ))}
-  </ul>
-</div>
       </div>
     </div>
   );
