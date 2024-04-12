@@ -71,8 +71,8 @@ const App = () => {
         </div>
 
         <div className="right">
-          <h3 className="texts">Today's main Focus</h3>
-          <h2 className="texts">Design Team's Meeting</h2>
+          <h2 className="text">Main Goal For Today</h2>
+          <h1 className="texts">Read for 30 minutes..</h1>
           
           </div> 
       </div>
