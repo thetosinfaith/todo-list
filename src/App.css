@@ -103,6 +103,9 @@ body {
   
   .taskCategories {
     margin-bottom: 30px; 
+    font-family: "Mukta", sans-serif;
+  font-weight: 600;
+  font-style: normal;
   }
   
   .dotIcon {
