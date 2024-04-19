@@ -67,11 +67,27 @@ const App = () => {
           </ul>
         </div>
         
-         <div class="right">
+         <div className="right">
          <h2 className="title">Main Goal For Today</h2>
           <h1 className="texts">Read for 30 minutes..</h1>
 
-          <div className="write-tasks">What's your next task?</div>
+          <div className="write-tasks">
+          <ul className="list">
+          <li className="icons">
+          <FontAwesomeIcon icon={faCircle} size="2xs" style={{ color: "#FFD43B", marginRight: "25px" }} />
+    </li>
+         <li className="icons">
+         <FontAwesomeIcon icon={faCircle} size="2xs" style={{ color: "#63E6BE", marginRight: "25px" }} />
+    </li>
+         <li className="icons">
+         <FontAwesomeIcon icon={faCircle} size="2xs" style={{ color: "#74C0FC", marginRight: "25px" }} />
+
+         <input type="text" id="taskInput" placeholder="What's your next task?"/>
+    </li>
+  </ul>
+         
+</div>
+
 
           <br />
           <br />
