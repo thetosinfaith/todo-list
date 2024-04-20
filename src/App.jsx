@@ -71,8 +71,14 @@ const App = () => {
          <h2 className="title">Main Goal For Today</h2>
           <h1 className="texts">Read for 30 minutes..</h1>
 
-          <br />
           <div className="write-tasks">What's your next task?</div>
+
+          <br />
+          <br />
+          
+          <div className="tasks">What's your next task?</div>
+          <div className="tasks">What's your next task?</div>
+          <div className="tasks">What's your next task?</div>
     </div>
 
     
