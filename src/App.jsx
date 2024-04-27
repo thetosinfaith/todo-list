@@ -5,8 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarDays } from '@fortawesome/free-solid-svg-icons';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 
- 
-
 const App = () => {
   const [userProfilePicture, setUserProfilePicture] = useState(null);
 
@@ -35,47 +33,52 @@ const App = () => {
           <br/>
 
           <div className="userContainer">
-          <div className="userPicture" style={{backgroundImage: `url(${userProfilePicture || userPlaceholder})`}} id="userPicture">
-            <input 
-              type="file" 
-              id="imageInput" 
-              accept="image/*" 
-              onChange={handleProfilePictureChange}
-            />
-          </div>
+            <div className="userPicture" style={{backgroundImage: `url(${userProfilePicture || userPlaceholder})`}} id="userPicture">
+              <input 
+                type="file" 
+                id="imageInput" 
+                accept="image/*" 
+                onChange={handleProfilePictureChange}
+              />
+            </div>
           </div>
           
           <div className="categories-header">
-  <div className="icon-text">
-    <FontAwesomeIcon icon={faCalendarDays} style={{ color: "#B197FC", marginRight: "5px"}} /> 
-    <h4 style={{ marginLeft: "5px" }}>Tasks for Today</h4>
-  </div>
-</div>
+            <div className="icon-text">
+              <FontAwesomeIcon icon={faCalendarDays} style={{ color: "#B197FC", marginRight: "10px"}} /> 
+              <h4 style={{ marginLeft: "5px" }}>ToDo List</h4>
+            </div>
+          </div>
 
-<br />
-<ul className="taskCategoriesList">
-
-  <li className="taskCategories">
-    <FontAwesomeIcon icon={faCircle} size="2xs" style={{ color: "#FFD43B", marginRight: "5px" }} />
-    <span>To-do</span>
-  </li>
-  <li className="taskCategories">
-    <FontAwesomeIcon icon={faCircle} size="2xs" style={{ color: "#63E6BE", marginRight: "5px" }} />
-    <span>Completed</span>
-  </li>
-  <li className="taskCategories">
-    <FontAwesomeIcon icon={faCircle} size="2xs" style={{ color: "#74C0FC", marginRight: "5px" }} />
-    <span>In Progress</span>
-  </li>
-</ul>
+          <br />
+          <ul className="taskCategoriesList">
+            <li className="taskCategories">
+              <FontAwesomeIcon icon={faCircle} size="2xs" style={{ color: "#FFD43B", marginRight: "25px" }} />
+              <span>To-do</span>
+            </li>
+            <li className="taskCategories">
+              <FontAwesomeIcon icon={faCircle} size="2xs" style={{ color: "#63E6BE", marginRight: "25px" }} />
+              <span>Completed</span>
+            </li>
+            <li className="taskCategories">
+              <FontAwesomeIcon icon={faCircle} size="2xs" style={{ color: "#74C0FC", marginRight: "25px" }} />
+              <span>In Progress</span>
+            </li>
+          </ul>
         </div>
-
-        <div className="right">
-          <h2 className="text">Main Goal For Today</h2>
+        
+         <div class="right">
+         <h2 className="title">Main Goal For Today</h2>
           <h1 className="texts">Read for 30 minutes..</h1>
-          
-          </div> 
-      </div>
+
+          <br />
+          <div className="write-tasks">What's your next task?</div>
+    </div>
+
+    
+
+
+    </div>
   );
 };
 
