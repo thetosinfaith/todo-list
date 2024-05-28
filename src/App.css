@@ -181,7 +181,7 @@ body {
 
 .list {
   display: flex;
-  align-items: center; /* Center items vertically */
+  align-items: center; 
   justify-content: center;
   list-style-type: none;
   padding: 0;
@@ -194,12 +194,12 @@ body {
 #taskInput {
   border: none;
   font-size: 14px;
-  width: 490px; /* Adjust width as needed */
-  margin-right: 15px; /* Add margin to separate it from the icons */
-  outline: none; /* Remove outline */
-}
+  width: 470px;
+  margin-right: 15px; 
+  outline: none; 
 
 #taskInput::placeholder {
-  color: #aaa; /* Adjust placeholder color */
+  color: #aaa; 
 }
 
+}
