@@ -14,7 +14,7 @@ body {
   width: 74%;
   display: flex;
   margin: auto;
-  margin-top: 45px;
+  margin-top: 35px;
   box-shadow: rgb(255,255,255) 0px 1px 5px, rgb(255,255,255) 0px 0px 0px 5px;
   border-radius: 20px;
 }
@@ -113,6 +113,7 @@ body {
     font-family: "Mukta", sans-serif;
     font-weight: 300;
     font-style: normal;
+    
   }
   
   .dotIcon {
@@ -133,6 +134,7 @@ body {
   justify-content: flex-start;
   align-items: flex-start; 
   padding: 20px;
+ 
 }
 
 .title {
@@ -193,13 +195,40 @@ body {
 
 #taskInput {
   border: none;
-  font-size: 14px;
+  font-size: 16px;
   width: 470px;
   margin-right: 15px; 
   outline: none; 
+}
+
 
 #taskInput::placeholder {
   color: #aaa; 
 }
 
+.other-tasks{
+  width: 100%;
+  height: 80px; 
+  border-radius: 12px;
+  background-color: #FFFFFF;
+  color: black;
+  margin: auto;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+  align-items: flex-start; 
+  padding: 20px;
+  
+
 }
+
+.tasks-list {
+  padding: 0;
+  list-style: none;
+}
+
+.other-task {
+  margin-bottom: 10px;
+}
+

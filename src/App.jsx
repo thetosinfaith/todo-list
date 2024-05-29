@@ -11,6 +11,8 @@ const App = () => {
   const [userProfilePicture, setUserProfilePicture] = useState(null);
   const [taskForTheDay, setTaskForTheDay] = useState("Read for 30 minutes..");
   const [isEditing, setIsEditing] = useState(false);
+  const [tasks, setTasks] = useState([]);
+
 
   const handleProfilePictureChange = (event) => {
     const selectedPicture = event.target.files[0];
@@ -70,15 +72,15 @@ const App = () => {
         <ul className="taskCategoriesList">
           <li className="taskCategories">
             <FontAwesomeIcon icon={faCircle} size="2xs" style={{ color: "#FFD43B", marginRight: "25px" }} />
-            <span>To-do</span>
+            <span>Add Task</span>
           </li>
           <li className="taskCategories">
             <FontAwesomeIcon icon={faCircle} size="2xs" style={{ color: "#63E6BE", marginRight: "25px" }} />
-            <span>Completed</span>
+            <span>Edit Task</span>
           </li>
           <li className="taskCategories">
             <FontAwesomeIcon icon={faCircle} size="2xs" style={{ color: "#74C0FC", marginRight: "25px" }} />
-            <span>In Progress</span>
+            <span>Delete Task</span>
           </li>
         </ul>
       </div>
@@ -109,22 +111,33 @@ const App = () => {
             </li>
           </ul>
 
+          <br />
+          <br />
+          <br />
+
           <div className="other-tasks">
-            <ul className="list-2">
+            <ul className="tasks-list">
             <li className="icons">
               <FontAwesomeIcon icon={faCircle} size="2xs" style={{ color: "#FFD43B", marginRight: "25px" }} />
             </li>
+            </ul>
+          </div>
+
+          <div className="other-tasks">
+            <ul className="tasks-list">
             <li className="icons">
               <FontAwesomeIcon icon={faCircle} size="2xs" style={{ color: "#63E6BE", marginRight: "25px" }} />
             </li>
-            <li className="icons">
-              <FontAwesomeIcon icon={faCircle} size="2xs" style={{ color: "#74C0FC", marginRight: "25px" }} />
-            </li>
-
             </ul>
-
           </div>
 
+          <div className="other-tasks">
+            <ul className="tasks-list">
+            <li className="icons">
+              <FontAwesomeIcon icon={faCircle} size="2xs" style={{ color: "#63E6BE", marginRight: "25px" }} />
+            </li>
+            </ul>
+          </div>
           <br />         
         </div>
       </div>
