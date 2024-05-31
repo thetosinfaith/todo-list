@@ -11,7 +11,7 @@ body {
 
 .parent-container{
   height: 90vh;
-  width: 74%;
+  width: 70%;
   display: flex;
   margin: auto;
   margin-top: 35px;
@@ -19,8 +19,14 @@ body {
   border-radius: 20px;
 }
 
+.left, .right {
+  height: 100%; 
+  overflow-y: auto; 
+}
+
+
 .left{
-  height: 90vh;
+
   width: 20%;
   background-color: #FFFFFF;
   box-shadow: rgb(255,255,255) 0px 1px 5px, rgb(255,255,255) 0px 0px 0px 5px;
@@ -124,7 +130,7 @@ body {
  
 .right {
   width: 70%;
-  height: 70px; 
+  
   border-radius: 12px;
   color: #FFFFFF;
   margin: auto;
@@ -138,7 +144,7 @@ body {
 }
 
 .title {
-  font-family: "Arial", sans-serif; 
+  font-family: "Mukta", sans-serif; 
   font-size: 18px; 
   margin-top: 10px; 
 }
@@ -151,7 +157,7 @@ body {
 
 
 .write-tasks{
-  width: 100%;
+  width: 70%;
   height: 80px; 
   border-radius: 12px;
   background-color: #FFFFFF;
@@ -167,7 +173,7 @@ body {
 }
 
 .tasks{
-  width: 100%;
+  width: 70%;
   height: 80px; 
   border-radius: 12px;
   background-color: #FFFFFF;
@@ -187,10 +193,12 @@ body {
   justify-content: center;
   list-style-type: none;
   padding: 0;
+  
 }
 
 .icons {
   margin-right: 15px;
+  margin-bottom: 20px;
 }
 
 #taskInput {
@@ -207,23 +215,38 @@ body {
 }
 
 .other-tasks{
+  position: relative;
   width: 100%;
+  height: 100%;
   border-radius: 12px;
   background-color: #FFFFFF;
   color: black;
-  margin: auto;
-  margin-top: 30px;
-  gap: 30px;
+
   display: flex;
   flex-direction: column;
   justify-content: flex-start; 
   align-items: flex-start; 
-  padding: 20px;
-  
+  padding: 230px;
+  font-family: "Mukta", sans-serif; 
+  font-size: 18px;
 
 }
 
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-5px); }
+}
+
 .tasks-list {
+  position: absolute;
+  margin-left: 30px;
+  margin-top: 40px;
+  gap: 10px;
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 500%; 
+  overflow-y: auto; 
   padding: 0;
   list-style: none;
 }

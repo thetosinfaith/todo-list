@@ -89,43 +89,33 @@ const App = () => {
         <ul className="taskCategoriesList">
           <li className="taskCategories">
             <FontAwesomeIcon icon={faCircle} size="sm" style={{ color: "#FFD43B", marginRight: "25px" }} />
-            <span>Add Task</span>
+            <span>To-do</span>
           </li>
           <li className="taskCategories">
             <FontAwesomeIcon icon={faCircle} size="sm" style={{ color: "#63E6BE", marginRight: "25px" }} />
-            <span>Edit Task</span>
+            <span>In Progress</span>
           </li>
           <li className="taskCategories">
             <FontAwesomeIcon icon={faCircle} size="sm" style={{ color: "#74C0FC", marginRight: "25px" }} />
-            <span>Delete Task</span>
+            <span>Completed</span>
           </li>
         </ul>
       </div>
-      
-      <div className="right">
-        <h2 className="title">Main Goal For Today</h2>
-        <h1 
-          className={`texts ${isEditing ? 'editing' : ''}`}
-          contentEditable={isEditing}
-          onClick={handleTitleClick}
-          onBlur={handleTitleBlur}
-          onInput={handleTitleChange}
-        >
-          {taskForTheDay}
-        </h1>
-
+    
         <div className="write-tasks">
           <ul className="list">
             <li className="icons">
-              <FontAwesomeIcon icon={faCircle} size="sm" style={{ color: "#FFD43B", marginRight: "25px" }} />
-              <FontAwesomeIcon icon={faCircle} size="sm" style={{ color: "#63E6BE", marginRight: "25px" }} />
-              <FontAwesomeIcon icon={faCircle} size="sm" style={{ color: "#74C0FC", marginRight: "25px" }} />
+              <FontAwesomeIcon icon={faCircle} size="sm" style={{ color: "#FFD43B",  animation: "bounce 1s infinite alternate", marginRight: "25px" }} />
+              <FontAwesomeIcon icon={faCircle} size="sm" style={{ color: "#63E6BE", animation: "bounce 1s infinite alternate", marginRight: "25px" }} />
+              <FontAwesomeIcon icon={faCircle} size="sm" style={{ color: "#74C0FC", animation: "bounce 1s infinite alternate", marginRight: "25px" }} />
               <input type="text" id="taskInput" placeholder=" What's your next task?" />
               <input type="time" id="timeInput" style={{ display: "none" }} onChange={handleTimeChange} />
               <FontAwesomeIcon icon={faClock} size="sm" style={{ color: "#B197FC", marginLeft: "25px", cursor: "pointer" }} onClick={handleTimeIconClick} />
               <FontAwesomeIcon icon={faCheck} size="sm" style={{ color: "#B197FC", marginLeft: "25px", cursor: "pointer" }} onClick={addTask} />   
             </li>
           </ul>
+
+          
  
           <br />
           <br />
@@ -142,7 +132,6 @@ const App = () => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 
