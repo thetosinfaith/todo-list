@@ -1,0 +1,24 @@
+*{
+  box-sizing: border-box;
+  background-color: #987EFF;
+}
+
+.parent-container{
+  background-color: #987EFF;
+  height: 90vh;
+  width: 90%;
+  margin: auto;
+  margin-top: 45px;
+  box-shadow: rgb(255,255,255) 0px 1px 5px, rgb(255,255,255) 0px 0px 0px 5px;
+  border-radius: 20px;
+}
+
+.left{
+  height: 90vh;
+  width: 30%;
+  background-color: #FFFFFF;
+  box-shadow: rgb(255,255,255) 0px 1px 5px, rgb(255,255,255) 0px 0px 0px 5px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
