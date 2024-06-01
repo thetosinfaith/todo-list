@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import "./App.css";
 import userPlaceholder from "./assets/image-placeholder.jpg";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCalendarDays } from '@fortawesome/free-solid-svg-icons';
+import { faCircle } from '@fortawesome/free-solid-svg-icons';
 
+ 
 
 const App = () => {
   const [userProfilePicture, setUserProfilePicture] = useState(null);
@@ -26,33 +30,52 @@ const App = () => {
 
   return (
     <div className="parent-container">
-      <div className="wrapper">
+        
         <div className="left">
           <br/>
 
           <div className="userContainer">
-            <div className="userPicture" style={{backgroundImage: `url(${userProfilePicture || userPlaceholder})`}} id="userPicture"></div>
-           
+          <div className="userPicture" style={{backgroundImage: `url(${userProfilePicture || userPlaceholder})`}} id="userPicture">
             <input 
               type="file" 
               id="imageInput" 
               accept="image/*" 
               onChange={handleProfilePictureChange}
             />
-            <div className="appName"><h2>Taskify</h2></div>
-            <div className="userName"><h3>Tosin Faith</h3></div>
           </div>
+          </div>
+          
+          <div className="categories-header">
+  <div className="icon-text">
+    <FontAwesomeIcon icon={faCalendarDays} style={{ color: "#B197FC", marginRight: "5px"}} /> 
+    <h4 style={{ marginLeft: "5px" }}>Tasks for Today</h4>
+  </div>
+</div>
 
-          <ul>
-            <li className="taskCategories">Personal</li>
-            <li className="taskCategories">Freelance</li>
-            <li className="taskCategories">Work</li>
-          </ul>
+<br />
+<ul className="taskCategoriesList">
+
+  <li className="taskCategories">
+    <FontAwesomeIcon icon={faCircle} size="2xs" style={{ color: "#FFD43B", marginRight: "5px" }} />
+    <span>To-do</span>
+  </li>
+  <li className="taskCategories">
+    <FontAwesomeIcon icon={faCircle} size="2xs" style={{ color: "#63E6BE", marginRight: "5px" }} />
+    <span>Completed</span>
+  </li>
+  <li className="taskCategories">
+    <FontAwesomeIcon icon={faCircle} size="2xs" style={{ color: "#74C0FC", marginRight: "5px" }} />
+    <span>In Progress</span>
+  </li>
+</ul>
         </div>
 
-        <div className="right"></div> 
+        <div className="right">
+          <h3 className="texts">Today's main Focus</h3>
+          <h2 className="texts">Design Team's Meeting</h2>
+          
+          </div> 
       </div>
-    </div>
   );
 };
 

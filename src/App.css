@@ -9,7 +9,8 @@ body {
 
 .parent-container{
   height: 80vh;
-  width: 90%;
+  width: 74%;
+  display: flex;
   margin: auto;
   margin-top: 80px;
   box-shadow: rgb(255,255,255) 0px 1px 5px, rgb(255,255,255) 0px 0px 0px 5px;
@@ -59,26 +60,59 @@ body {
   cursor: pointer; 
 }
 
-.appName{
-  background-color: transparent; 
-  color:  black; 
+  .categories-header{
   display: flex; 
   align-items: center; 
+  font-size: 1.5rem;
   font-family: "Mukta", sans-serif;
-  font-weight: 600;
+  font-weight: 200;
   font-style: normal;
-
-}
-
-.userName {
-  background-color: transparent; 
-  margin-left: 17px;
-  color:  #987EFF; 
-  display: flex; 
-  align-items: center; 
-  font-family: "Mukta", sans-serif;
-  font-weight: 600;
-  font-style: normal;
+  margin-top: 20px;
+  color: #987EFF;
+  margin-left: auto;
   }
+
+  .categories-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px; 
+    margin-bottom: 10px;
+    color: #987EFF;
+  }
+  
+  .icon-text {
+    display: flex;
+    align-items: center;
+      margin-top: 10px; 
+      margin-bottom: 10px;
+      color: #987EFF;
+      border-bottom: 2px solid #987EFF; 
+      padding-bottom: 10px;
+    }
+    
+  .icon-text h4 {
+    font-size: 1rem;
+    color: #B197FC;
+  }
+
+  .taskCategoriesList {
+    list-style-type: none;
+    padding: 20;
+  }
+  
+  .taskCategories {
+    margin-bottom: 30px; 
+  }
+  
+  .dotIcon {
+    margin-right: 50px; 
+    gap: 10px;
+  }
+  
+  
+  
+  
+
  
   
