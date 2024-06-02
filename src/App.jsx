@@ -4,6 +4,9 @@ import userPlaceholder from "./assets/image-placeholder.jpg";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarDays } from '@fortawesome/free-solid-svg-icons';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
+import { faClock } from '@fortawesome/free-solid-svg-icons';
+import {faTasks} from '@fortawesome/free-solid-svg-icons';
+
 
 const App = () => {
   const [userProfilePicture, setUserProfilePicture] = useState(null);
@@ -72,29 +75,28 @@ const App = () => {
           <h1 className="texts">Read for 30 minutes..</h1>
 
           <div className="write-tasks">
-          <ul className="list">
-          <li className="icons">
-          <FontAwesomeIcon icon={faCircle} size="2xs" style={{ color: "#FFD43B", marginRight: "25px" }} />
-    </li>
-         <li className="icons">
-         <FontAwesomeIcon icon={faCircle} size="2xs" style={{ color: "#63E6BE", marginRight: "25px" }} />
-    </li>
-         <li className="icons">
-         <FontAwesomeIcon icon={faCircle} size="2xs" style={{ color: "#74C0FC", marginRight: "25px" }} />
+  <ul className="list">
+    <li className="icons">
+      <FontAwesomeIcon icon={faCircle} size="2xs" style={{ color: "#FFD43B", marginRight: "25px" }} />
+      <FontAwesomeIcon icon={faCircle} size="2xs" style={{ color: "#63E6BE", marginRight: "25px" }} />
+      <FontAwesomeIcon icon={faCircle} size="2xs" style={{ color: "#74C0FC", marginRight: "25px" }} />
 
-         <input type="text" id="taskInput" placeholder="What's your next task?"/>
+      <input type="text" id="taskInput" placeholder=" What's your next task?" />
+
+      <FontAwesomeIcon icon={faClock} size="sm" style={{color: "#B197FC", marginLeft: "25px" }} />
+      <FontAwesomeIcon icon={faTasks} size="sm" style={{ color: "#B197FC", marginLeft: "25px" }} />   
+      
+        
+
     </li>
   </ul>
+
+  <br />
          
 </div>
 
 
-          <br />
-          <br />
           
-          <div className="tasks">What's your next task?</div>
-          <div className="tasks">What's your next task?</div>
-          <div className="tasks">What's your next task?</div>
     </div>
 
     

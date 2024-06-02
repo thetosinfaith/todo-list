@@ -10,17 +10,17 @@ body {
 }
 
 .parent-container{
-  height: 80vh;
+  height: 90vh;
   width: 74%;
   display: flex;
   margin: auto;
-  margin-top: 80px;
+  margin-top: 45px;
   box-shadow: rgb(255,255,255) 0px 1px 5px, rgb(255,255,255) 0px 0px 0px 5px;
   border-radius: 20px;
 }
 
 .left{
-  height: 80vh;
+  height: 90vh;
   width: 20%;
   background-color: #FFFFFF;
   box-shadow: rgb(255,255,255) 0px 1px 5px, rgb(255,255,255) 0px 0px 0px 5px;
@@ -123,7 +123,7 @@ body {
  
 .right {
   width: 70%;
-  height: 80px; 
+  height: 70px; 
   border-radius: 12px;
   color: #FFFFFF;
   margin: auto;
@@ -181,11 +181,25 @@ body {
 
 .list {
   display: flex;
+  align-items: center; /* Center items vertically */
+  justify-content: center;
   list-style-type: none;
   padding: 0;
 }
 
 .icons {
-  margin-right: 0px; /* Adjust spacing between icons */
+  margin-right: 15px;
+}
+
+#taskInput {
+  border: none;
+  font-size: 14px;
+  width: 490px; /* Adjust width as needed */
+  margin-right: 15px; /* Add margin to separate it from the icons */
+  outline: none; /* Remove outline */
+}
+
+#taskInput::placeholder {
+  color: #aaa; /* Adjust placeholder color */
 }
 
